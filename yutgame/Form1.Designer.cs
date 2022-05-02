@@ -60,6 +60,10 @@ namespace yutgame
             this.horsePos2 = new System.Windows.Forms.PictureBox();
             this.horsePos1 = new System.Windows.Forms.PictureBox();
             this.btnThrow = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtSend = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos28)).BeginInit();
@@ -90,6 +94,7 @@ namespace yutgame
             ((System.ComponentModel.ISupportInitialize)(this.horsePos3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -395,7 +400,7 @@ namespace yutgame
             // 
             // btnThrow
             // 
-            this.btnThrow.Location = new System.Drawing.Point(615, 554);
+            this.btnThrow.Location = new System.Drawing.Point(603, 554);
             this.btnThrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThrow.Name = "btnThrow";
             this.btnThrow.Size = new System.Drawing.Size(269, 61);
@@ -404,11 +409,47 @@ namespace yutgame
             this.btnThrow.UseVisualStyleBackColor = true;
             this.btnThrow.Click += new System.EventHandler(this.btnThrow_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(586, 12);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(298, 336);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
+            // 
+            // txtSend
+            // 
+            this.txtSend.Location = new System.Drawing.Point(651, 359);
+            this.txtSend.Name = "txtSend";
+            this.txtSend.Size = new System.Drawing.Size(162, 25);
+            this.txtSend.TabIndex = 3;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(819, 359);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(65, 27);
+            this.btnSend.TabIndex = 4;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(586, 354);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 36);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 641);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.txtSend);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnThrow);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -444,7 +485,9 @@ namespace yutgame
             ((System.ComponentModel.ISupportInitialize)(this.horsePos3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -481,6 +524,10 @@ namespace yutgame
         private System.Windows.Forms.PictureBox horsePos2;
         private System.Windows.Forms.PictureBox horsePos1;
         private System.Windows.Forms.Button btnThrow;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox txtSend;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
