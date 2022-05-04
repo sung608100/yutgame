@@ -65,14 +65,14 @@ namespace yutgame
             this.btnSend = new System.Windows.Forms.Button();
             this.lblChat = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.lblIp = new System.Windows.Forms.Label();
-            this.lblPort = new System.Windows.Forms.Label();
-            this.lblNick = new System.Windows.Forms.Label();
-            this.txtIp = new System.Windows.Forms.TextBox();
-            this.txtPort = new System.Windows.Forms.TextBox();
-            this.txtNickname = new System.Windows.Forms.TextBox();
-            this.btnHost = new System.Windows.Forms.Button();
             this.btnClient = new System.Windows.Forms.Button();
+            this.btnHost = new System.Windows.Forms.Button();
+            this.txtNickname = new System.Windows.Forms.TextBox();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.txtIp = new System.Windows.Forms.TextBox();
+            this.lblNick = new System.Windows.Forms.Label();
+            this.lblPort = new System.Windows.Forms.Label();
+            this.lblIp = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos28)).BeginInit();
@@ -448,8 +448,9 @@ namespace yutgame
             this.lblChat.Font = new System.Drawing.Font("굴림", 15F);
             this.lblChat.Location = new System.Drawing.Point(598, 357);
             this.lblChat.Name = "lblChat";
-            this.lblChat.Size = new System.Drawing.Size(0, 25);
+            this.lblChat.Size = new System.Drawing.Size(41, 25);
             this.lblChat.TabIndex = 5;
+            this.lblChat.Text = "0P";
             // 
             // pnlLogin
             // 
@@ -462,58 +463,19 @@ namespace yutgame
             this.pnlLogin.Controls.Add(this.lblNick);
             this.pnlLogin.Controls.Add(this.lblPort);
             this.pnlLogin.Controls.Add(this.lblIp);
-            this.pnlLogin.Location = new System.Drawing.Point(603, 390);
+            this.pnlLogin.Location = new System.Drawing.Point(603, 392);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(264, 155);
             this.pnlLogin.TabIndex = 28;
             // 
-            // lblIp
+            // btnClient
             // 
-            this.lblIp.AutoSize = true;
-            this.lblIp.Location = new System.Drawing.Point(14, 16);
-            this.lblIp.Name = "lblIp";
-            this.lblIp.Size = new System.Drawing.Size(20, 15);
-            this.lblIp.TabIndex = 0;
-            this.lblIp.Text = "IP";
-            // 
-            // lblPort
-            // 
-            this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(14, 47);
-            this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(47, 15);
-            this.lblPort.TabIndex = 1;
-            this.lblPort.Text = "PORT";
-            // 
-            // lblNick
-            // 
-            this.lblNick.AutoSize = true;
-            this.lblNick.Location = new System.Drawing.Point(9, 80);
-            this.lblNick.Name = "lblNick";
-            this.lblNick.Size = new System.Drawing.Size(52, 15);
-            this.lblNick.TabIndex = 2;
-            this.lblNick.Text = "닉네임";
-            // 
-            // txtIp
-            // 
-            this.txtIp.Location = new System.Drawing.Point(85, 6);
-            this.txtIp.Name = "txtIp";
-            this.txtIp.Size = new System.Drawing.Size(123, 25);
-            this.txtIp.TabIndex = 3;
-            // 
-            // txtPort
-            // 
-            this.txtPort.Location = new System.Drawing.Point(85, 44);
-            this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(123, 25);
-            this.txtPort.TabIndex = 4;
-            // 
-            // txtNickname
-            // 
-            this.txtNickname.Location = new System.Drawing.Point(85, 78);
-            this.txtNickname.Name = "txtNickname";
-            this.txtNickname.Size = new System.Drawing.Size(123, 25);
-            this.txtNickname.TabIndex = 5;
+            this.btnClient.Location = new System.Drawing.Point(152, 118);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(90, 26);
+            this.btnClient.TabIndex = 7;
+            this.btnClient.Text = "입장";
+            this.btnClient.UseVisualStyleBackColor = true;
             // 
             // btnHost
             // 
@@ -524,14 +486,56 @@ namespace yutgame
             this.btnHost.Text = "생성";
             this.btnHost.UseVisualStyleBackColor = true;
             // 
-            // btnClient
+            // txtNickname
             // 
-            this.btnClient.Location = new System.Drawing.Point(152, 118);
-            this.btnClient.Name = "btnClient";
-            this.btnClient.Size = new System.Drawing.Size(90, 26);
-            this.btnClient.TabIndex = 7;
-            this.btnClient.Text = "입장";
-            this.btnClient.UseVisualStyleBackColor = true;
+            this.txtNickname.Location = new System.Drawing.Point(85, 78);
+            this.txtNickname.Name = "txtNickname";
+            this.txtNickname.Size = new System.Drawing.Size(123, 25);
+            this.txtNickname.TabIndex = 5;
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(85, 44);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(123, 25);
+            this.txtPort.TabIndex = 4;
+            // 
+            // txtIp
+            // 
+            this.txtIp.Location = new System.Drawing.Point(85, 6);
+            this.txtIp.Name = "txtIp";
+            this.txtIp.Size = new System.Drawing.Size(123, 25);
+            this.txtIp.TabIndex = 3;
+            // 
+            // lblNick
+            // 
+            this.lblNick.AutoSize = true;
+            this.lblNick.Font = new System.Drawing.Font("굴림", 10F);
+            this.lblNick.Location = new System.Drawing.Point(9, 80);
+            this.lblNick.Name = "lblNick";
+            this.lblNick.Size = new System.Drawing.Size(59, 17);
+            this.lblNick.TabIndex = 2;
+            this.lblNick.Text = "닉네임";
+            // 
+            // lblPort
+            // 
+            this.lblPort.AutoSize = true;
+            this.lblPort.Font = new System.Drawing.Font("굴림", 10F);
+            this.lblPort.Location = new System.Drawing.Point(14, 47);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(49, 17);
+            this.lblPort.TabIndex = 1;
+            this.lblPort.Text = "PORT";
+            // 
+            // lblIp
+            // 
+            this.lblIp.AutoSize = true;
+            this.lblIp.Font = new System.Drawing.Font("굴림", 10F);
+            this.lblIp.Location = new System.Drawing.Point(14, 16);
+            this.lblIp.Name = "lblIp";
+            this.lblIp.Size = new System.Drawing.Size(21, 17);
+            this.lblIp.TabIndex = 0;
+            this.lblIp.Text = "IP";
             // 
             // Form1
             // 
