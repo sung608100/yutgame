@@ -7,12 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
 
 namespace yutgame
 {
     public partial class Form1 : Form
     {
         int num;
+
+        bool is_server = false;
+
+        Socket server_socket;
+
+        Dictionary<string, Socket> connected_clients = new Dictionary<string, Socket>();
 
         public Form1()
         {
@@ -47,6 +54,11 @@ namespace yutgame
             {
                 num = 5;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -60,10 +60,19 @@ namespace yutgame
             this.horsePos2 = new System.Windows.Forms.PictureBox();
             this.horsePos1 = new System.Windows.Forms.PictureBox();
             this.btnThrow = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbChat = new System.Windows.Forms.RichTextBox();
             this.txtSend = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblChat = new System.Windows.Forms.Label();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lblIp = new System.Windows.Forms.Label();
+            this.lblPort = new System.Windows.Forms.Label();
+            this.lblNick = new System.Windows.Forms.Label();
+            this.txtIp = new System.Windows.Forms.TextBox();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.txtNickname = new System.Windows.Forms.TextBox();
+            this.btnHost = new System.Windows.Forms.Button();
+            this.btnClient = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos28)).BeginInit();
@@ -94,7 +103,7 @@ namespace yutgame
             ((System.ComponentModel.ISupportInitialize)(this.horsePos3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -409,13 +418,13 @@ namespace yutgame
             this.btnThrow.UseVisualStyleBackColor = true;
             this.btnThrow.Click += new System.EventHandler(this.btnThrow_Click);
             // 
-            // richTextBox1
+            // rtbChat
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(586, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(298, 336);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.rtbChat.Location = new System.Drawing.Point(586, 12);
+            this.rtbChat.Name = "rtbChat";
+            this.rtbChat.Size = new System.Drawing.Size(298, 336);
+            this.rtbChat.TabIndex = 2;
+            this.rtbChat.Text = "";
             // 
             // txtSend
             // 
@@ -433,28 +442,113 @@ namespace yutgame
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // lblChat
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(586, 354);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 36);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.lblChat.AutoSize = true;
+            this.lblChat.Font = new System.Drawing.Font("굴림", 15F);
+            this.lblChat.Location = new System.Drawing.Point(598, 357);
+            this.lblChat.Name = "lblChat";
+            this.lblChat.Size = new System.Drawing.Size(0, 25);
+            this.lblChat.TabIndex = 5;
+            // 
+            // pnlLogin
+            // 
+            this.pnlLogin.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlLogin.Controls.Add(this.btnClient);
+            this.pnlLogin.Controls.Add(this.btnHost);
+            this.pnlLogin.Controls.Add(this.txtNickname);
+            this.pnlLogin.Controls.Add(this.txtPort);
+            this.pnlLogin.Controls.Add(this.txtIp);
+            this.pnlLogin.Controls.Add(this.lblNick);
+            this.pnlLogin.Controls.Add(this.lblPort);
+            this.pnlLogin.Controls.Add(this.lblIp);
+            this.pnlLogin.Location = new System.Drawing.Point(603, 390);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(264, 155);
+            this.pnlLogin.TabIndex = 28;
+            // 
+            // lblIp
+            // 
+            this.lblIp.AutoSize = true;
+            this.lblIp.Location = new System.Drawing.Point(14, 16);
+            this.lblIp.Name = "lblIp";
+            this.lblIp.Size = new System.Drawing.Size(20, 15);
+            this.lblIp.TabIndex = 0;
+            this.lblIp.Text = "IP";
+            // 
+            // lblPort
+            // 
+            this.lblPort.AutoSize = true;
+            this.lblPort.Location = new System.Drawing.Point(14, 47);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(47, 15);
+            this.lblPort.TabIndex = 1;
+            this.lblPort.Text = "PORT";
+            // 
+            // lblNick
+            // 
+            this.lblNick.AutoSize = true;
+            this.lblNick.Location = new System.Drawing.Point(9, 80);
+            this.lblNick.Name = "lblNick";
+            this.lblNick.Size = new System.Drawing.Size(52, 15);
+            this.lblNick.TabIndex = 2;
+            this.lblNick.Text = "닉네임";
+            // 
+            // txtIp
+            // 
+            this.txtIp.Location = new System.Drawing.Point(85, 6);
+            this.txtIp.Name = "txtIp";
+            this.txtIp.Size = new System.Drawing.Size(123, 25);
+            this.txtIp.TabIndex = 3;
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(85, 44);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(123, 25);
+            this.txtPort.TabIndex = 4;
+            // 
+            // txtNickname
+            // 
+            this.txtNickname.Location = new System.Drawing.Point(85, 78);
+            this.txtNickname.Name = "txtNickname";
+            this.txtNickname.Size = new System.Drawing.Size(123, 25);
+            this.txtNickname.TabIndex = 5;
+            // 
+            // btnHost
+            // 
+            this.btnHost.Location = new System.Drawing.Point(41, 118);
+            this.btnHost.Name = "btnHost";
+            this.btnHost.Size = new System.Drawing.Size(90, 26);
+            this.btnHost.TabIndex = 6;
+            this.btnHost.Text = "생성";
+            this.btnHost.UseVisualStyleBackColor = true;
+            // 
+            // btnClient
+            // 
+            this.btnClient.Location = new System.Drawing.Point(152, 118);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(90, 26);
+            this.btnClient.TabIndex = 7;
+            this.btnClient.Text = "입장";
+            this.btnClient.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 641);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pnlLogin);
+            this.Controls.Add(this.lblChat);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtSend);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbChat);
             this.Controls.Add(this.btnThrow);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.horsePos29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos28)).EndInit();
@@ -485,7 +579,8 @@ namespace yutgame
             ((System.ComponentModel.ISupportInitialize)(this.horsePos3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horsePos1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,10 +619,19 @@ namespace yutgame
         private System.Windows.Forms.PictureBox horsePos2;
         private System.Windows.Forms.PictureBox horsePos1;
         private System.Windows.Forms.Button btnThrow;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbChat;
         private System.Windows.Forms.TextBox txtSend;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblChat;
+        private System.Windows.Forms.Panel pnlLogin;
+        private System.Windows.Forms.Button btnClient;
+        private System.Windows.Forms.Button btnHost;
+        private System.Windows.Forms.TextBox txtNickname;
+        private System.Windows.Forms.TextBox txtPort;
+        private System.Windows.Forms.TextBox txtIp;
+        private System.Windows.Forms.Label lblNick;
+        private System.Windows.Forms.Label lblPort;
+        private System.Windows.Forms.Label lblIp;
     }
 }
 
