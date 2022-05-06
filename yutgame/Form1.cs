@@ -79,8 +79,72 @@ namespace yutgame
             InitializeComponent();
         }
 
-        private void btnThrow_Click(object sender, EventArgs e)
-        {
+
+        // 게임 끝
+        public void finish() {
+            bool check = false;
+            if (label3.Text == "●" && label4.Text == "●") {
+                MessageBox.Show("Red Team Win!!!\n새 게임을 시작합니다."); check = true;
+            }
+            else if (label1.Text == "●" && label2.Text == "●") {
+                MessageBox.Show("Blue Team Win!!!\n새 게임을 시작합니다."); check = true;
+            }
+
+            if (check) {
+                firstShortCutCnt1 = 0;
+                firstShortCutCnt2 = 0;
+                firstShortCutCnt3 = 0;
+                firstShortCutCnt4 = 0;
+                outlineCnt1 = 0;
+                outlineCnt2 = 0;
+                outlineCnt3 = 0;
+                outlineCnt4 = 0;
+                centerShortCutCnt1 = 0;
+                centerShortCutCnt2 = 0;
+                centerShortCutCnt3 = 0;
+                centerShortCutCnt4 = 0;
+                lastShortCutCnt1 = 0;
+                lastShortCutCnt2 = 0;
+                lastShortCutCnt3 = 0;
+                lastShortCutCnt4 = 0;
+                label1.Text = "";
+                label2.Text = "";
+                label3.Text = "";
+                label4.Text = "";
+                firstShortCutCheck1 = 0;
+                centerShortCutCheck1 = 0;
+                lastShortCutCheck1 = 0;
+                firstShortCutCheck3 = 0;
+                centerShortCutCheck3 = 0;
+                lastShortCutCheck3 = 0;
+                firstShortCutCheck2 = 0;
+                centerShortCutCheck2 = 0;
+                lastShortCutCheck2 = 0;
+                firstShortCutCheck4 = 0;
+                centerShortCutCheck4 = 0;
+                lastShortCutCheck4 = 0;
+                btnBlue1.Visible = true;
+                btnBlue2.Visible = true;
+                btnRed1.Visible = true;
+                btnRed2.Visible = true;
+
+                //외곽
+                PictureBox[] pb1 = new PictureBox[] { horsePos1, horsePos2, horsePos3, horsePos4, horsePos5, horsePos6, horsePos7, horsePos8, horsePos9, horsePos10, horsePos11, horsePos12, horsePos13, horsePos14, horsePos15, horsePos16, horsePos17, horsePos18, horsePos19, horsePos20, horsePos1, not1, not2, not3, not4, not5, not6, not7 };
+                //1st대각선
+                PictureBox[] pb2 = new PictureBox[] { horsePos6, horsePos21, horsePos22, horsePos28, horsePos24, horsePos25, horsePos16, horsePos17, horsePos18, horsePos19, horsePos20, horsePos1, not1, not2, not3, not4, not5, not6, not7 };
+                //2nd대각선
+                PictureBox[] pb3 = new PictureBox[] { horsePos11, horsePos26, horsePos27, horsePos28, horsePos29, horsePos30, horsePos1, not1, not2, not3, not4, not5, not6, not7 };
+                //윷놀이판 초기화
+                for (int reset = 0; reset < 23; reset++) 
+                    pb1[reset].Image = null; 
+                for (int reset = 0; reset < 12; reset++) 
+                    pb2[reset].Image = null; 
+                for (int reset = 0; reset < 7; reset++) 
+                    pb3[reset].Image = null;
+            }
+        }
+
+        private void btnThrow_Click(object sender, EventArgs e) {
             Random rand = new Random();
             yutnum = rand.Next(16);
             if(yutnum == 1) // 빽도
@@ -421,65 +485,7 @@ namespace yutgame
                     lastShortCutCheck1 = 0;
                 }
             }
-
-            // 게임 끝
-            if (label1.Text == "●" && label2.Text == "●") 
-            {
-                MessageBox.Show("Blue Team Win!!!\n새 게임을 시작합니다."); 
-                      
-                firstShortCutCnt1 = 0;
-                firstShortCutCnt2 = 0;
-                firstShortCutCnt3 = 0;
-                firstShortCutCnt4 = 0;
-                outlineCnt1 = 0;
-                outlineCnt2 = 0;
-                outlineCnt3 = 0;
-                outlineCnt4 = 0;
-                centerShortCutCnt1 = 0;
-                centerShortCutCnt2 = 0;
-                centerShortCutCnt3 = 0;
-                centerShortCutCnt4 = 0;
-                lastShortCutCnt1 = 0;
-                lastShortCutCnt2 = 0;
-                lastShortCutCnt3 = 0;
-                lastShortCutCnt4 = 0;
-                label1.Text = "";
-                label2.Text = "";
-                label3.Text = "";
-                label4.Text = "";
-                firstShortCutCheck1 = 0;
-                centerShortCutCheck1 = 0;
-                lastShortCutCheck1 = 0;
-                firstShortCutCheck3 = 0;
-                centerShortCutCheck3 = 0;
-                lastShortCutCheck3 = 0;
-                firstShortCutCheck2 = 0;
-                centerShortCutCheck2 = 0;
-                lastShortCutCheck2 = 0;
-                firstShortCutCheck4 = 0;
-                centerShortCutCheck4 = 0;
-                lastShortCutCheck4 = 0;                
-                btnBlue1.Visible = true;
-                btnBlue2.Visible = true;
-                btnRed1.Visible = true;
-                btnRed2.Visible = true;
-
-                //윷놀이판 초기화
-                for (int reset = 0; reset < 23; reset++) 
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 12; reset++)
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 7; reset++) 
-                { 
-                    pb1[reset].Image = null;
-                }
-            }
+            finish(); 
         }
         
         private void btnBlue2_Click(object sender, EventArgs e)
@@ -771,64 +777,7 @@ namespace yutgame
                     lastShortCutCheck2 = 0;
                 }
             }
-            // 게임끝
-            if (label1.Text == "●" && label2.Text == "●")
-            {
-                MessageBox.Show("Blue Team Win!!!\n새 게임을 시작합니다.");
-                
-                firstShortCutCnt1 = 0;
-                firstShortCutCnt2 = 0;
-                firstShortCutCnt3 = 0;
-                firstShortCutCnt4 = 0;
-                outlineCnt1 = 0;
-                outlineCnt2 = 0;
-                outlineCnt3 = 0;
-                outlineCnt4 = 0;
-                centerShortCutCnt1 = 0;
-                centerShortCutCnt2 = 0;
-                centerShortCutCnt3 = 0;
-                centerShortCutCnt4 = 0;
-                lastShortCutCnt1 = 0;
-                lastShortCutCnt2 = 0;
-                lastShortCutCnt3 = 0;
-                lastShortCutCnt4 = 0;
-                label1.Text = "";
-                label2.Text = "";
-                label3.Text = "";
-                label4.Text = "";
-                firstShortCutCheck1 = 0;
-                centerShortCutCheck1 = 0;
-                lastShortCutCheck1 = 0;
-                firstShortCutCheck3 = 0;
-                centerShortCutCheck3 = 0;
-                lastShortCutCheck3 = 0;
-                firstShortCutCheck2 = 0;
-                centerShortCutCheck2 = 0;
-                lastShortCutCheck2 = 0;
-                firstShortCutCheck4 = 0;
-                centerShortCutCheck4 = 0;
-                lastShortCutCheck4 = 0;
-                btnBlue1.Visible = true;
-                btnBlue2.Visible = true;
-                btnRed1.Visible = true;
-                btnRed2.Visible = true;
-
-                //윷놀이판 초기화
-                for (int reset = 0; reset < 23; reset++)
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 12; reset++)
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 7; reset++)
-                {
-                    pb1[reset].Image = null;
-                }
-            }
+            finish();
         }
 
         private void btnRed1_Click(object sender, EventArgs e)
@@ -1135,65 +1084,7 @@ namespace yutgame
                     lastShortCutCheck3 = 0;
                 }
             }
-
-            // 게임 끝
-            if (label3.Text == "●" && label4.Text == "●")
-            {
-                MessageBox.Show("Blue Team Win!!!\n새 게임을 시작합니다.");
-                outlineCnt1 = 0;
-                firstShortCutCnt1 = 0;
-                firstShortCutCnt2 = 0;
-                firstShortCutCnt3 = 0;
-                firstShortCutCnt4 = 0;
-                outlineCnt1 = 0;
-                outlineCnt2 = 0;
-                outlineCnt3 = 0;
-                outlineCnt4 = 0;
-                centerShortCutCnt1 = 0;
-                centerShortCutCnt2 = 0;
-                centerShortCutCnt3 = 0;
-                centerShortCutCnt4 = 0;
-                lastShortCutCnt1 = 0;
-                lastShortCutCnt2 = 0;
-                lastShortCutCnt3 = 0;
-                lastShortCutCnt4 = 0;
-                label1.Text = "";
-                label2.Text = "";
-                label3.Text = "";
-                label4.Text = "";
-                firstShortCutCheck1 = 0;
-                centerShortCutCheck1 = 0;
-                lastShortCutCheck1 = 0;
-                firstShortCutCheck3 = 0;
-                centerShortCutCheck3 = 0;
-                lastShortCutCheck3 = 0;
-                firstShortCutCheck2 = 0;
-                centerShortCutCheck2 = 0;
-                lastShortCutCheck2 = 0;
-                firstShortCutCheck4 = 0;
-                centerShortCutCheck4 = 0;
-                lastShortCutCheck4 = 0;
-                btnBlue1.Visible = true;
-                btnBlue2.Visible = true;
-                btnRed1.Visible = true;
-                btnRed2.Visible = true;
-
-                //윷놀이판 초기화
-                for (int reset = 0; reset < 23; reset++)
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 12; reset++)
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 7; reset++)
-                {
-                    pb1[reset].Image = null;
-                }
-            }
+            finish();
         }
 
         private void btnRed2_Click(object sender, EventArgs e)
@@ -1500,65 +1391,7 @@ namespace yutgame
                     lastShortCutCheck4 = 0;
                 }
             }
-
-            // 게임 끝
-            if (label3.Text == "●" && label4.Text == "●")
-            {
-                MessageBox.Show("Blue Team Win!!!\n새 게임을 시작합니다.");
-                outlineCnt1 = 0;
-                firstShortCutCnt1 = 0;
-                firstShortCutCnt2 = 0;
-                firstShortCutCnt3 = 0;
-                firstShortCutCnt4 = 0;
-                outlineCnt1 = 0;
-                outlineCnt2 = 0;
-                outlineCnt3 = 0;
-                outlineCnt4 = 0;
-                centerShortCutCnt1 = 0;
-                centerShortCutCnt2 = 0;
-                centerShortCutCnt3 = 0;
-                centerShortCutCnt4 = 0;
-                lastShortCutCnt1 = 0;
-                lastShortCutCnt2 = 0;
-                lastShortCutCnt3 = 0;
-                lastShortCutCnt4 = 0;
-                label1.Text = "";
-                label2.Text = "";
-                label3.Text = "";
-                label4.Text = "";
-                firstShortCutCheck1 = 0;
-                centerShortCutCheck1 = 0;
-                lastShortCutCheck1 = 0;
-                firstShortCutCheck3 = 0;
-                centerShortCutCheck3 = 0;
-                lastShortCutCheck3 = 0;
-                firstShortCutCheck2 = 0;
-                centerShortCutCheck2 = 0;
-                lastShortCutCheck2 = 0;
-                firstShortCutCheck4 = 0;
-                centerShortCutCheck4 = 0;
-                lastShortCutCheck4 = 0;
-                btnBlue1.Visible = true;
-                btnBlue2.Visible = true;
-                btnRed1.Visible = true;
-                btnRed2.Visible = true;
-
-                //윷놀이판 초기화
-                for (int reset = 0; reset < 23; reset++)
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 12; reset++)
-                {
-                    pb1[reset].Image = null;
-
-                }
-                for (int reset = 0; reset < 7; reset++)
-                {
-                    pb1[reset].Image = null;
-                }
-            }
+            finish();
         }
     }
 }
